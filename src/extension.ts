@@ -32,12 +32,16 @@ export function activate(context: vscode.ExtensionContext) {
           for (let i = 0; i < jsonKeys.length; i++) {
             for (let j = i + 1; j < jsonKeys.length; j++) {
               if (jsonObject[jsonKeys[i]] === jsonObject[jsonKeys[j]]) {
-                vscode.window.showInformationMessage(
+                vscode.window.showWarningMessage(
                   'Duplicate Value Found for: ' + jsonObject[jsonKeys[j]]
                 );
               }
             }
           }
+        } else {
+          vscode.window.showInformationMessage(
+            'Sorry, I only check for json files.'
+          );
         }
       }
     }
