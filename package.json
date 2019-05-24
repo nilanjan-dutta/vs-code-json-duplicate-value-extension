@@ -2,7 +2,7 @@
   "name": "jsonduplicatevaluecheck",
   "displayName": "JsonDuplicateValueCheck",
   "description": "An extension that checks for duplicate value in a json file",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "nilanjan-dutta",
   "author": {
     "name": "Nilanjan Dutta",
