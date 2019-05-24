@@ -29,13 +29,20 @@ export function activate(context: vscode.ExtensionContext) {
             return;
           }
           let jsonKeys = Object.keys(jsonObject);
+          let duplicateFound = false;
           for (let i = 0; i < jsonKeys.length; i++) {
             for (let j = i + 1; j < jsonKeys.length; j++) {
               if (jsonObject[jsonKeys[i]] === jsonObject[jsonKeys[j]]) {
                 vscode.window.showWarningMessage(
                   'Duplicate Value Found for: ' + jsonObject[jsonKeys[j]]
                 );
+                duplicateFound = true;
               }
+            }
+            if (!duplicateFound) {
+              vscode.window.showInformationMessage(
+                'No Duplicate found !'
+              );
             }
           }
         } else {
